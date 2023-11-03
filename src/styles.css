@@ -13,6 +13,7 @@ body {
   h1 {
     margin-top: 0px;
     margin-bottom: 0px;
+    text-align: center;
     font-size: 100px;
     color: rgba(175, 47, 47, 0.15);
   }
@@ -49,7 +50,8 @@ body {
   .main ul {
     margin: 0px;
     padding: 0px;
-  }
+    list-style: none;
+}
   
   .main > ul > li {
     padding: 10px 15px 10px 5px;
@@ -69,8 +71,12 @@ body {
     border: solid 1px #ddd;
     background-color: white;
   }
-  .count,
 
+  span.completed {
+    text-decoration: line-through;
+  }
+  
+  .count,
   button {
     color: #777;
   }
@@ -80,6 +86,7 @@ body {
     padding: 5px 10px;
     background: none;
     border: none;
-  }
+    cursor: pointer;
+}
 
   
