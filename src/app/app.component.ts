@@ -6,6 +6,10 @@ import { TodoComponent } from './todo/todo.component';
   standalone: true,
   imports: [TodoComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUexport class AppComponent {
+    content = '待辦事項 A';
+  
+    hasFinished = false;
+  }rls: ['./app.component.css'],
 })
 export class AppComponent {}
