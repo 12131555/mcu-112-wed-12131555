@@ -4,6 +4,7 @@ import {
   EventEmitter,
   HostBinding,
   Input,
+  OnInit,
   Output,
 } from '@angular/core';
 
@@ -22,6 +23,9 @@ export class TodoComponent {
 
   @Output()
   remove = new EventEmitter<void>();
+
+  @Output()
+  view = new EventEmitter<void>();
 
   @Output()
   readonly stateChange = new EventEmitter<boolean>();
