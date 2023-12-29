@@ -30,16 +30,17 @@ id?: number;
     this.route.paramMap
       .pipe(
         filter((paramMap) => paramMap.has('id')),
-        map((paramMap) => +paramMap.get('id')!),
-        tap((id) => (this.id = id)),
-        switchMap((id) => this.taskService.getById(id))
+        map((paramMap) => +paramMap.get('id')!)
       )
-      .subscribe((formData) => (this.formData = formData));
+      .subscribe((id) => (this.id = id));
 
       this.route.data
-      .pipe(map(({ title }) => title))
-      .subscribe((title) => (this.title = title));
-    }
+      .pipe(
+        tap(({ title }) => (this.title = title)),
+        map(({ formData }) => formData)
+      )
+      .subscribe((formData) => (this.formData = formData));
+  }
 
   onSave(task: Todo): void {
     let action$: Observable<Todo>;
